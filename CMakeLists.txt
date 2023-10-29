@@ -11,6 +11,8 @@ add_executable(case_3_task_2 "case 3/case3_task2.cpp"
         "case 3/include/GraphAdapt.h"
         "case 3/include/GraphAdapt.cpp")
 
-add_executable(case_4 "case 4/main.cpp")
+add_executable(case_4 "case 4/main.cpp"
+        "case 4/include/Integration.h"
+        "case 4/include/Integration.cpp")
 
 # Laboratory work

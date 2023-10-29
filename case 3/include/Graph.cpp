@@ -17,7 +17,7 @@ Graph::Graph(int size)
             if(i == j)
                 adj_matrix[i][j] = 0.0;
             else
-                adj_matrix[i][j] = -1.0;
+                adj_matrix[i][j] = 0.0;
         }
 }
 
@@ -66,6 +66,11 @@ void Graph::remove(int x, int y)
 }
 
 void Graph::print() {
-    std::cout << this->V();
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            std::cout << adj_matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 

@@ -16,3 +16,18 @@ add_executable(case_4 "case 4/main.cpp"
         "case 4/include/Integration.cpp")
 
 # Laboratory work
+add_executable(lab_1 "lab 1/main.cpp"
+        "lab 1/include/Figure.h"
+        "lab 1/include/Circle.h"
+        "lab 1/include/Circle.cpp"
+        "lab 1/include/Rectangle.h"
+        "lab 1/include/Triangle.h"
+        "lab 1/include/Romb.h"
+        "lab 1/include/Trapecia.h"
+        "lab 1/include/Rectangle.cpp"
+        "lab 1/include/Triangle.cpp"
+        "lab 1/include/Trapecia.cpp"
+        "lab 1/include/Romb.cpp"
+        "lab 1/include/Queue.cpp"
+        "lab 1/include/Queue.h"
+)

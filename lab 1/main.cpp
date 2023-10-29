@@ -10,6 +10,7 @@ int main() {
     Queue queue1;
     Queue queue2;
     Queue queue3;
+    Queue queue4;
 
     Circle circle1(5);
     Circle circle2(7);
@@ -37,6 +38,14 @@ int main() {
     queue3.enqueue(&rectangle1);
     queue3.enqueue(&rectangle2);
 
+    Romb rhombus1(6, 8, 4);
+    Romb rhombus2(8, 10, 5);
+    queue4.enqueue(&rhombus1);
+    queue4.enqueue(&rhombus2);
+
+    queue4.enqueue(&rectangle1);
+    queue4.enqueue(&rectangle2);
+
     while (!queue1.isEmpty() || !queue2.isEmpty() || !queue3.isEmpty()) {
         std::cout << std::endl << "Queue 1 (Circle/Rectangle): " << std::endl;
         while (!queue1.isEmpty()) {
@@ -55,6 +64,13 @@ int main() {
         std::cout << std::endl << "Queue 3 (Trapezia/Rectangle): " << std::endl;
         while (!queue3.isEmpty()) {
             Figure* figure = queue3.dequeue();
+            std::cout << "Area: " << figure->calculateArea() << ", ";
+            std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
+        }
+
+        std::cout << std::endl << "Queue 4 (Romb/Rectangle): " << std::endl;
+        while (!queue4.isEmpty()) {
+            Figure* figure = queue4.dequeue();
             std::cout << "Area: " << figure->calculateArea() << ", ";
             std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
         }

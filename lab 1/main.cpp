@@ -1,80 +1,52 @@
-#include <iostream>
-#include "include/Circle.h"
-#include "include/Trapecia.h"
-#include "include/Triangle.h"
+#include "include/Element.h"
 #include "include/Queue.h"
-#include "include/Romb.h"
-#include "include/Rectangle.h"
+#include "include/Stack.h"
 
-int main() {
-    Queue queue1;
-    Queue queue2;
-    Queue queue3;
-    Queue queue4;
+int main ()
+{
+    Element e1, e2, e3, e4, e5;
 
-    Circle circle1(5);
-    Circle circle2(7);
-    Rectangle rectangle1(4, 6);
-    Rectangle rectangle2(3, 9);
+    e1.value = 10;
+    e2.value = 20;
+    e3.value = 30;
+    e4.value = 40;
+    e5.value = 50;
 
-    queue1.enqueue(&circle1);
-    queue1.enqueue(&circle2);
-    queue1.enqueue(&rectangle1);
-    queue1.enqueue(&rectangle2);
+    /******************** QUEUE ********************/
+    std::cout << std::endl << "/******************** QUEUE ********************/" << std::endl;
+    Queue q;
+    q.Put(&e2);
+    q.Put(&e3);
+    q.Put(&e1);
+    q.Put(&e5);
+    q.Put(&e4);
 
-    Triangle triangle1(5, 8, 7, 7, 8);
-    Triangle triangle2(6, 9, 6, 9, 10);
-    queue2.enqueue(&triangle1);
-    queue2.enqueue(&triangle2);
+    q.Get();
+    q.Get();
+    q.Print();
+    // Printing product
+    q.PrintProduct();
+    q.PrintProductThree();
+    // Printing sum
+    q.PrintSum();
+    q.PrintSumThree();
+    q.PrintSumEven();
 
-    queue2.enqueue(&rectangle1);
-    queue2.enqueue(&rectangle2);
+    /******************** STACK ********************/
+    std::cout << std::endl << "/******************** STACK ********************/" << std::endl;
+    Stack s;
+    s.Push(&e2);
+    s.Push(&e3);
+    s.Push(&e1);
+    s.Push(&e5);
+    s.Push(&e4);
+    // Printing product
+    s.PrintProduct();
+    s.PrintProductThree();
+    // Printing sum
+    s.PrintSum();
+    s.PrintSumOdd();
+    s.PrintSumThree();
 
-    Trapezia trapezium1(4, 7, 5, 4, 5);
-    Trapezia trapezium2(5, 9, 6, 7, 8);
-    queue3.enqueue(&trapezium1);
-    queue3.enqueue(&trapezium2);
-
-    queue3.enqueue(&rectangle1);
-    queue3.enqueue(&rectangle2);
-
-    Romb rhombus1(6, 8, 4);
-    Romb rhombus2(8, 10, 5);
-    queue4.enqueue(&rhombus1);
-    queue4.enqueue(&rhombus2);
-
-    queue4.enqueue(&rectangle1);
-    queue4.enqueue(&rectangle2);
-
-    while (!queue1.isEmpty() || !queue2.isEmpty() || !queue3.isEmpty()) {
-        std::cout << std::endl << "Queue 1 (Circle/Rectangle): " << std::endl;
-        while (!queue1.isEmpty()) {
-            Figure* figure = queue1.dequeue();
-            std::cout << "Area: " << figure->calculateArea() << ", ";
-            std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
-        }
-
-        std::cout << std::endl << "Queue 2 (Triangle/Rectangle): " << std::endl;
-        while (!queue2.isEmpty()) {
-            Figure* figure = queue2.dequeue();
-            std::cout << "Area: " << figure->calculateArea() << ", ";
-            std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
-        }
-
-        std::cout << std::endl << "Queue 3 (Trapezia/Rectangle): " << std::endl;
-        while (!queue3.isEmpty()) {
-            Figure* figure = queue3.dequeue();
-            std::cout << "Area: " << figure->calculateArea() << ", ";
-            std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
-        }
-
-        std::cout << std::endl << "Queue 4 (Romb/Rectangle): " << std::endl;
-        while (!queue4.isEmpty()) {
-            Figure* figure = queue4.dequeue();
-            std::cout << "Area: " << figure->calculateArea() << ", ";
-            std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
-        }
-    }
-
-    return 0;
+    getchar();
 }

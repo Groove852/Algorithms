@@ -23,6 +23,7 @@ add_executable(lab_1 "lab 1/main.cpp"
         "lab 1/include/Stack.h"
         "lab 1/include/Stack.cpp"
 )
+
 add_executable(lab_2 "lab 2/main.cpp"
         "lab 2/include/Figure.h"
         "lab 2/include/Circle.h"

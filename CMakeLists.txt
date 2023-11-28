@@ -39,3 +39,8 @@ add_executable(lab_2 "lab 2/main.cpp"
         "lab 2/include/Queue.h"
         "lab 2/include/Queue.cpp"
 )
+
+add_executable("lab_3" "lab 3/main.cpp"
+        "lab 3/include/Sorter.h"
+        "lab 3/include/Sorter.cpp"
+)

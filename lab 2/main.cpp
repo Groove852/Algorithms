@@ -12,39 +12,53 @@ int main() {
     Queue queue3;
     Queue queue4;
 
-    Circle circle1(5);
-    Circle circle2(7);
-    Rectangle rectangle1(4, 6);
-    Rectangle rectangle2(3, 9);
+    Figure* f1, *f2, *f3, *f4, *f5, *f6, *f7, *f8, *f9, *f10;
 
-    queue1.enqueue(&circle1);
-    queue1.enqueue(&circle2);
-    queue1.enqueue(&rectangle1);
-    queue1.enqueue(&rectangle2);
+    Circle* c1, *c2;
+    c1 = new Circle(5);
+    c2 = new Circle(7);
+    f1 = (Figure*) c1; f2 = (Figure*) c2;
 
-    Triangle triangle1(5, 8, 7, 7, 8);
-    Triangle triangle2(6, 9, 6, 9, 10);
-    queue2.enqueue(&triangle1);
-    queue2.enqueue(&triangle2);
+    Rectangle* r1, *r2;
+    r1 = new Rectangle(4,6);
+    r2 = new Rectangle(3,9);
+    f3 = (Figure*) r1; f4 = (Figure*) r2;
 
-    queue2.enqueue(&rectangle1);
-    queue2.enqueue(&rectangle2);
+    Triangle* tr1, *tr2;
+    tr1 = new Triangle(5, 8, 7, 7, 8);
+    tr2 = new Triangle(6, 9, 6, 9, 10);
+    f5 = (Figure*) tr1; f6 = (Figure*) tr2;
 
-    Trapezia trapezium1(4, 7, 5, 4, 5);
-    Trapezia trapezium2(5, 9, 6, 7, 8);
-    queue3.enqueue(&trapezium1);
-    queue3.enqueue(&trapezium2);
+    Trapezia* tz1, *tz2;
+    tz1 = new Trapezia(4, 7, 5, 4, 5);
+    tz2 = new Trapezia(5, 9, 6, 7, 8);
+    f7 = (Figure*) tz1; f8 = (Figure*) tz2;
 
-    queue3.enqueue(&rectangle1);
-    queue3.enqueue(&rectangle2);
+    Romb* ro1, *ro2;
+    ro1 = new Romb(6, 8, 4);
+    ro2 = new Romb(8, 10, 5);
+    f9 = (Figure*) ro1; f10 = (Figure*) ro2;
 
-    Romb rhombus1(6, 8, 4);
-    Romb rhombus2(8, 10, 5);
-    queue4.enqueue(&rhombus1);
-    queue4.enqueue(&rhombus2);
 
-    queue4.enqueue(&rectangle1);
-    queue4.enqueue(&rectangle2);
+    queue1.enqueue(c1);
+    queue1.enqueue(c2);
+    queue1.enqueue(r1);
+    queue1.enqueue(r2);
+
+    queue2.enqueue(tr1);
+    queue2.enqueue(tr2);
+    queue2.enqueue(r1);
+    queue2.enqueue(r2);
+
+    queue3.enqueue(tr1);
+    queue3.enqueue(tr2);
+    queue3.enqueue(r1);
+    queue3.enqueue(r2);
+
+    queue4.enqueue(r1);
+    queue4.enqueue(r2);
+    queue4.enqueue(r1);
+    queue4.enqueue(r2);
 
     while (!queue1.isEmpty() || !queue2.isEmpty() || !queue3.isEmpty()) {
         std::cout << std::endl << "Queue 1 (Circle/Rectangle): " << std::endl;
@@ -75,6 +89,6 @@ int main() {
             std::cout << "Perimeter: " << figure->calculatePerimeter() << std::endl;
         }
     }
-
+    delete f1; delete f2; delete f3; delete f4; delete f5; delete f6; delete f7; delete f8; delete f9; delete f10;
     return 0;
 }

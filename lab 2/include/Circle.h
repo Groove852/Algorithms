@@ -9,6 +9,7 @@
 class Circle : public Figure {
 public:
     Circle(double radius);
+    ~Circle(void) override;
     double calculateArea() const override;
     double calculatePerimeter() const override;
 

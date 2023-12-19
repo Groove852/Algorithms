@@ -9,7 +9,7 @@
 class Romb : public Figure {
 public:
     Romb(double diagonal1, double diagonal2, double side);
-
+    ~Romb() override;
     double calculateArea() const override;
     double calculatePerimeter() const override;
 

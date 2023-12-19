@@ -9,6 +9,7 @@
 class Rectangle : public Figure {
 public:
     Rectangle(double width, double height);
+    ~Rectangle() override;
     double calculateArea() const override;
     double calculatePerimeter() const override;
 

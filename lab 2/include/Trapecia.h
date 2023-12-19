@@ -9,7 +9,7 @@
 class Trapezia : public Figure {
 public:
     Trapezia(double base1, double base2, double height, double side1, double side2);
-
+    ~Trapezia() override;
     double calculateArea() const override;
     double calculatePerimeter() const override;
 

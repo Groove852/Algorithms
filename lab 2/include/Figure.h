@@ -8,6 +8,8 @@
 
 class Figure {
 public:
+    Figure(void);
+    virtual ~Figure(void);
     virtual double calculateArea() const = 0;
     virtual double calculatePerimeter() const = 0;
 };

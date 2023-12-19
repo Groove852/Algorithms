@@ -19,30 +19,32 @@ void MeasureTime(void (*sortAlgorithm)(std::vector<int>&), std::vector<int>& arr
 
 int main() {
     srand(time(NULL));
-    const int N = 10000;
+    const int N = 10000000;
     std::vector<int> arr(N);
 
-    for (int i = 0; i < N; i++) {
-        arr[i] = Generate(1, 1000);
-    }
 
-    std::cout << "Bubble Sort:" << std::endl;
-    MeasureTime(Sorter::bubbleSort, arr);
-
-    std::cout << "Insertion Sort:" << std::endl;
-    MeasureTime(Sorter::insertionSort, arr);
-
-    std::cout << "Selection Sort:" << std::endl;
-    MeasureTime(Sorter::selectionSort, arr);
+//    std::cout << "Bubble Sort:" << std::endl;
+//    MeasureTime(Sorter::bubbleSort, arr);
+//
+//    std::cout << "Insertion Sort:" << std::endl;
+//    MeasureTime(Sorter::insertionSort, arr);
+//
+//    std::cout << "Selection Sort:" << std::endl;
+//    MeasureTime(Sorter::selectionSort, arr);
+//
+//    std::cout << "Insertion Sort With Sentinel:" << std::endl;
+//    MeasureTime(Sorter::insertionSortWithSentinel, arr);
+//
+//    std::cout << "Cocktail Shaker Sort:" << std::endl;
+//    MeasureTime(Sorter::cocktailShakerSort, arr);
 
     std::cout << "Shell Sort:" << std::endl;
-    MeasureTime(Sorter::shellSort, arr);
-
-    std::cout << "Insertion Sort With Sentinel:" << std::endl;
-    MeasureTime(Sorter::insertionSortWithSentinel, arr);
-
-    std::cout << "Cocktail Shaker Sort:" << std::endl;
-    MeasureTime(Sorter::cocktailShakerSort, arr);
+    for(int i = 0; i < 10; i++) {
+        for (int j = 0; j < N; j++) {
+            arr[j] = Generate(0,  32767);
+        }
+        MeasureTime(Sorter::shellSort, arr);
+    }
 
     return 0;
 }
